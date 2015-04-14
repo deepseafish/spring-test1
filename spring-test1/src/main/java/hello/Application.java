@@ -12,6 +12,8 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class Application {
 	public static void main(String[] args) {
 		SpringApplication app = new SpringApplication(Application.class);
+		// Disable command line properties
+		app.setAddCommandLineProperties(false);
 		ConfigurableApplicationContext ctx = app.run(args);
 		MyConfig myConfig = ctx.getBean(MyConfig.class);
 
